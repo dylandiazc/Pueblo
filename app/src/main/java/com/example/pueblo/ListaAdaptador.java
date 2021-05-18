@@ -1,5 +1,6 @@
 package com.example.pueblo;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +14,9 @@ import java.util.ArrayList;
 
 public class ListaAdaptador extends RecyclerView.Adapter<ListaAdaptador.viewHolder> {
 
-    ArrayList<actividadesTuristicas> listadeDatos;
+    ArrayList<ActividadesTuristicas> listadeDatos;
 
-    public ListaAdaptador(ArrayList<actividadesTuristicas> listadeDatos) {
+    public ListaAdaptador(ArrayList<ActividadesTuristicas> listadeDatos) {
         this.listadeDatos = listadeDatos;
     }
 
@@ -23,12 +24,14 @@ public class ListaAdaptador extends RecyclerView.Adapter<ListaAdaptador.viewHold
     @Override
     public ListaAdaptador.viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View vistaDelItemLista= LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_lista,null,false);
-                return new viewHolder(vistaDelItemLista);
+                .inflate(R.layout.item_lista,parent,false);
+
+        return new viewHolder(vistaDelItemLista);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ListaAdaptador.viewHolder holder, int position) {
+        
         holder.actualizarDatos(listadeDatos.get(position));
 
     }
@@ -49,10 +52,21 @@ public class ListaAdaptador extends RecyclerView.Adapter<ListaAdaptador.viewHold
             fotoSitio2=itemView.findViewById(R.id.sitioFoto2);
         }
 
-        public void actualizarDatos(actividadesTuristicas actividadesTuristicas) {
+        public void actualizarDatos(final ActividadesTuristicas actividadesTuristicas) {
             nombreSitio.setText(actividadesTuristicas.getNombreSitio());
-            fotoSitio2.setImageResource(actividadesTuristicas.getFotoSitio1());
+            fotoSitio1.setImageResource(actividadesTuristicas.getFotoSitio1());
             fotoSitio2.setImageResource(actividadesTuristicas.getFotoSitio2());
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent intent = new Intent(itemView.getContext(),MainActivity.class);
+                    intent.putExtra("datosActividadesTuristicas",actividadesTuristicas);
+                    itemView.getContext().startActivity(intent);
+
+                }
+            });
         }
     }
 }

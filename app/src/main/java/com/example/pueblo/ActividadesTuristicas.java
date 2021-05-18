@@ -1,11 +1,12 @@
 package com.example.pueblo;
 
-public class actividadesTuristicas {
+import java.io.Serializable;
 
+public class ActividadesTuristicas implements Serializable {
     String nombreSitio;
     int fotoSitio1, fotoSitio2;
 
-    public actividadesTuristicas(String nombreSitio, int fotoSitio1, int fotoSitio2) {
+    public ActividadesTuristicas(String nombreSitio, int fotoSitio1, int fotoSitio2) {
         this.nombreSitio = nombreSitio;
         this.fotoSitio1 = fotoSitio1;
         this.fotoSitio2 = fotoSitio2;
