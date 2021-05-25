@@ -29,10 +29,10 @@ public class Home extends AppCompatActivity {
 
     private void crearLista(){
 
-        listadeActividades.add(new ActividadesTuristicas("Sitios",R.drawable.sitios,R.drawable.sitios1));
-        listadeActividades.add(new ActividadesTuristicas("Hoteles",R.drawable.hotel1,R.drawable.hotel2));
-        listadeActividades.add(new ActividadesTuristicas("Gastronomía",R.drawable.comida1,R.drawable.comida2));
-        listadeActividades.add(new ActividadesTuristicas("Economía",R.drawable.economia1,R.drawable.economia2));
+        listadeActividades.add(new ActividadesTuristicas("Sitios",getString(R.string.descripcion1),R.drawable.sitios,R.drawable.sitios1));
+        listadeActividades.add(new ActividadesTuristicas("Hoteles",getString(R.string.descripcion2),R.drawable.hotel1,R.drawable.hotel2));
+        listadeActividades.add(new ActividadesTuristicas("Gastronomía",getString(R.string.descripcion3),R.drawable.comida1,R.drawable.comida2));
+        listadeActividades.add(new ActividadesTuristicas("Economía",getString(R.string.descripcion4),R.drawable.economia1,R.drawable.economia2));
 
 
     }

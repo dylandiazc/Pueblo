@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Pueblo</string>
+
+    <string name="descripcion1">Aquí podemos apreciar el parque principal y los charcos del corregimeinto Tapartó
+    </string>
+    <string name="descripcion2">Aquí podemos apreciar uno de los hoteles más emblematicos del municipio conocido como: Finca Hotel Los Arrayanes.</string>
+    <string name="descripcion3">Dos de los platos maás típicos de la región la bandeja paisa y la mazamorra Antioqueña.</string>
+    <string name="descripcion4">Dos de las fuentes más importantes de la economía de la región; el café y la ganadería.</string>
 </resources>
