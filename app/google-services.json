@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "16829842337",
+    "project_id": "crudpueblo",
+    "storage_bucket": "crudpueblo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16829842337:android:6e5a30bf2484686f8ec1e0",
+        "android_client_info": {
+          "package_name": "com.example.pueblo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16829842337-foohpe81q3eql82gkq419ltmhp8dtoe5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm3eZkKP36cfDXDEV7znhItVPcArjDUko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "16829842337-foohpe81q3eql82gkq419ltmhp8dtoe5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
