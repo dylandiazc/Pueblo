@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pueblo</string>
+
+    <string name="descripcion1">Here we can appreciate the main park and the puddles of the Tapartó corregimeinto</string>
+    <string name="descripcion2">Here we can appreciate one of the most emblematic hotels in the municipality known as: Finca Hotel Los Arrayanes.</string>
+    <string name="descripcion3">Two of the most typical dishes of the region, the Paisa tray and the Antioqueña mazamorra.</string>
+    <string name="descripcion4">Two of the most important sources of the economy of the region; coffee and livestock.</string>
+    <string name="descripcionAcerca">My name is Dylan Díaz Castañeda, I am 26 years old, currently I am a Labor Technical
+                                    Student as a Software Development Assistant with basic knowledge of English.
+                                    I am a well-mannered, disciplined, respectful person with skills for communication,
+                                    dialogue and teamwork.</string>
+    <string name="opcion1">About</string>
+    <string name="opcion2">English</string>
+    <string name="opcion3">Spanish</string>
+
+</resources>

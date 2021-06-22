@@ -4,6 +4,13 @@
     <string name="descripcion1">Aquí podemos apreciar el parque principal y los charcos del corregimeinto Tapartó
     </string>
     <string name="descripcion2">Aquí podemos apreciar uno de los hoteles más emblematicos del municipio conocido como: Finca Hotel Los Arrayanes.</string>
-    <string name="descripcion3">Dos de los platos maás típicos de la región la bandeja paisa y la mazamorra Antioqueña.</string>
+    <string name="descripcion3">Dos de los platos más típicos de la región la bandeja paisa y la mazamorra Antioqueña.</string>
     <string name="descripcion4">Dos de las fuentes más importantes de la economía de la región; el café y la ganadería.</string>
+    <string name="descripcionAcerca">Mi nombre es Dylan Díaz Castañeda, tengo 26 años, actualmente soy Estudiante Tecnico Laboral Como Asistente
+                                    En Desarrollo De Software con conocimientos básicos de Inglés. Soy una persona cumplida, disciplinada,
+                                    respetuosa y con habilidades para la comunicación el dialogo y el trabajo en equipo.</string>
+    <string name="opcion1">Acerca de</string>
+    <string name="opcion2">Inglés</string>
+    <string name="opcion3">Español</string>
+
 </resources>
