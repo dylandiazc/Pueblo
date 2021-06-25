@@ -1,5 +1,6 @@
 package com.example.pueblo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,6 +10,13 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -17,6 +25,8 @@ public class Home extends AppCompatActivity {
 
     ArrayList<ActividadesTuristicas> listadeActividades=new ArrayList<>();
     RecyclerView listadoGrafico;
+
+    FirebaseFirestore baseDatos=FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +38,7 @@ public class Home extends AppCompatActivity {
         listadoGrafico.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
 
         crearLista();
-        ListaAdaptador adaptador=new ListaAdaptador(listadeActividades);
-        listadoGrafico.setAdapter(adaptador);
+
     }
 
     public void cambiarIdioma(String lenguaje){
@@ -85,10 +94,31 @@ public class Home extends AppCompatActivity {
 
     private void crearLista(){
 
-        listadeActividades.add(new ActividadesTuristicas("Sitios",getString(R.string.descripcion1),R.drawable.sitios,R.drawable.sitios1));
-        listadeActividades.add(new ActividadesTuristicas("Hoteles",getString(R.string.descripcion2),R.drawable.hotel1,R.drawable.hotel2));
-        listadeActividades.add(new ActividadesTuristicas("Gastronomía",getString(R.string.descripcion3),R.drawable.comida1,R.drawable.comida2));
-        listadeActividades.add(new ActividadesTuristicas("Economía",getString(R.string.descripcion4),R.drawable.economia1,R.drawable.economia2));
+        baseDatos.collection("actividades")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()){
+
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                String nombre=document.get("nombre").toString();
+                                String descripcion=document.get("descripcion").toString();
+                                String foto1=document.get("foto1").toString();
+                                String foto2=document.get("foto2").toString();
+
+                                listadeActividades.add(new ActividadesTuristicas(nombre,descripcion,foto1,foto2));
+                            }
+                            ListaAdaptador adaptador=new ListaAdaptador(listadeActividades);
+                            listadoGrafico.setAdapter(adaptador);
+
+                        }else{
+
+                            Toast.makeText(Home.this, "Error en consulta", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                });
 
 
     }
